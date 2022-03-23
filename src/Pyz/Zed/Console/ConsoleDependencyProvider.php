@@ -86,7 +86,7 @@ use Spryker\Zed\ProductRelation\Communication\Console\ProductRelationUpdaterCons
 use Spryker\Zed\ProductRelationDataImport\ProductRelationDataImportConfig;
 use Spryker\Zed\ProductValidity\Communication\Console\ProductValidityConsole;
 use Spryker\Zed\Propel\Communication\Console\DatabaseDropConsole;
-use Spryker\Zed\Propel\Communication\Console\DatabaseDropTablesConsole;
+use Pyz\Zed\Propel\Communication\Console\DatabaseDropTablesConsole;
 use Spryker\Zed\Propel\Communication\Console\DeleteMigrationFilesConsole;
 use Spryker\Zed\Propel\Communication\Console\DeployPreparePropelConsole;
 use Spryker\Zed\Propel\Communication\Console\EntityTransferGeneratorConsole;

@@ -94,15 +94,19 @@ $stores['DE'] = [
     'currencyIsoCodes' => ['EUR', 'CHF'],
     'queuePools' => [
         'synchronizationPool' => [
-            'AT-connection',
             'DE-connection',
         ],
     ],
-    'storesWithSharedPersistence' => ['AT'],
+    'storesWithSharedPersistence' => [],
 ];
 
 $stores['AT'] = [
-        'storesWithSharedPersistence' => ['DE'],
+    'queuePools' => [
+        'synchronizationPool' => [
+            'AT-connection',
+        ],
+    ],
+    'storesWithSharedPersistence' => [],
     ] + $stores['DE'];
 
 $stores['US'] = [
@@ -114,4 +118,4 @@ $stores['US'] = [
         'storesWithSharedPersistence' => [],
     ] + $stores['DE'];
 
-return $stores;
+return array_intersect_key($stores, [APPLICATION_STORE => []]);

@@ -105,7 +105,6 @@ sections:
         setup-search-create-sources:
             command: 'vendor/bin/console search:setup:sources'
 
-    init-storages-per-region:
         propel-copy-schema:
             command: 'vendor/bin/console propel:schema:copy'
 
@@ -130,9 +129,8 @@ sections:
         init-database:
             command: 'vendor/bin/console setup:init-db'
 
-    demodata:
         import-demodata:
-            command: 'vendor/bin/console data:import --config=data/import/local/full_${SPRYKER_REGION}.yml'
+            command: 'vendor/bin/console data:import --config=data/import/local/full_${APPLICATION_STORE}.yml'
 
         update-product-labels:
             command: 'vendor/bin/console product-label:relations:update'

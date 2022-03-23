@@ -18,11 +18,9 @@ assets:
 regions:
     EU:
         services:
-            database:
-                database: eu-docker
-                username: spryker
-                password: secret
-
+            databases:
+                t-multi-db-first:
+                t-multi-db-second:
         stores:
             DE:
                 services:
@@ -32,6 +30,8 @@ regions:
                         namespace: 1
                     search:
                         namespace: de_search
+                    database:
+                        name: t-multi-db-first
             AT:
                 services:
                     broker:
@@ -40,12 +40,12 @@ regions:
                         namespace: 2
                     search:
                         namespace: at_search
+                    database:
+                        name: t-multi-db-second
     US:
         services:
             database:
-                database: us-docker
-                username: spryker
-                password: secret
+                t-multi-db-third:
         stores:
             US:
                 services:
@@ -55,6 +55,9 @@ regions:
                         namespace: 3
                     search:
                         namespace: us_search
+                    database:
+                       name: t-multi-db-third
+
 groups:
     EU:
         region: EU
