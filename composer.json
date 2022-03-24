@@ -268,7 +268,7 @@
         "github-protocols": [
             "https"
         ],
-        "process-timeout": 900,
+        "process-timeout": 9900,
         "chromium-revision": 814168
     },
     "scripts": {

@@ -1,0 +1,3 @@
+[submodule "docker-sdk"]
+	path = docker-sdk
+	url = https://github.com/spryker/docker-sdk.git
