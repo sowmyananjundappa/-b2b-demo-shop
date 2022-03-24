@@ -24,6 +24,7 @@ sections:
 
         clean-db:
             command: "vendor/bin/console propel:tables:drop -vvv --no-ansi"
+            stores: true
 
     init-storage:
         setup-search-create-sources:
@@ -33,34 +34,36 @@ sections:
     init-storages-per-region:
         propel-copy-schema:
             command: "vendor/bin/console propel:schema:copy -vvv --no-ansi"
+            stores: true
 
         propel-postgres-compatibility:
             command: "vendor/bin/console propel:pg-sql-compat -vvv --no-ansi"
+            stores: true
 
         propel-migration-delete:
             command: "vendor/bin/console propel:migration:delete -vvv --no-ansi"
+            stores: true
 
         propel-tables-drop:
             command: "vendor/bin/console propel:tables:drop -vvv --no-ansi"
+            stores: true
 
         propel-diff:
-            command: "vendor/bin/console propel:diff -vvv --no-ansi"
-
-        propel-migrate:
-            command: "vendor/bin/console propel:migrate -vvv --no-ansi"
-
-        propel-migration-cleanup:
-            command: "vendor/bin/console propel:migration:delete -vvv --no-ansi"
+            command: 'vendor/bin/console propel:diff -vvv --no-ansi && vendor/bin/console propel:migrate -vvv --no-ansi && vendor/bin/console propel:migration:delete -vvv --no-ansi'
+            stores: true
 
         init-database:
             command: "vendor/bin/console setup:init-db -vvv --no-ansi"
+            stores: true
 
     demodata:
         import-eu-region-demodata:
-            command: "vendor/bin/console data:import --config=data/import/production/full_US.yml"
+            command: 'vendor/bin/console data:import --config=data/import/production/full_${APPLICATION_STORE}.yml'
+            stores: true
 
         update-product-labels:
             command: "vendor/bin/console product-label:relations:update -vvv --no-ansi"
+            stores: true
 
         check-product-validity:
             command: "vendor/bin/console product:check-validity"

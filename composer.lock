@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "167342edb4cfa527ab0341e2ad88f2f0",
+    "content-hash": "2d4e125fb91fbcb49c7b7040a8fbf42e",
     "packages": [
         {
             "name": "brick/math",
@@ -3993,7 +3993,7 @@
                 "spryker/console": "^4.10.0",
                 "spryker/health-check": "^1.0.0",
                 "spryker/index-generator": "^1.1.0",
-                "spryker/install": "^1.0.0",
+                "spryker/install": "dev-feature/sc-8877/dev-filter-stores-via-install",
                 "spryker/publish-and-synchronize-health-check": "^1.0.0",
                 "spryker/publish-and-synchronize-health-check-search": "^1.0.0",
                 "spryker/publish-and-synchronize-health-check-storage": "^1.0.0"
@@ -26181,16 +26181,16 @@
         },
         {
             "name": "spryker/install",
-            "version": "1.0.0",
+            "version":"dev-feature/sc-8877/dev-filter-stores-via-install",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spryker/install.git",
-                "reference": "1faea8f96b8ebf76528905ef9f0424e8438be947"
+                "reference": "1a800410903aefcc5f9c11a29530aee3f249c774"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spryker/install/zipball/1faea8f96b8ebf76528905ef9f0424e8438be947",
-                "reference": "1faea8f96b8ebf76528905ef9f0424e8438be947",
+                "url": "https://api.github.com/repos/spryker/install/zipball/1a800410903aefcc5f9c11a29530aee3f249c774",
+                "reference": "1a800410903aefcc5f9c11a29530aee3f249c774",
                 "shasum": ""
             },
             "require": {
@@ -26227,9 +26227,9 @@
             "description": "Install module",
             "support": {
                 "issues": "https://github.com/spryker/install/issues",
-                "source": "https://github.com/spryker/install/tree/1.0.0"
+                "source": "https://github.com/spryker/install/tree/feature/sc-8877/dev-filter-stores-via-install"
             },
-            "time": "2021-01-19T08:57:18+00:00"
+            "time": "2022-03-24T02:57:50+00:00"
         },
         {
             "name": "spryker/installer",
@@ -55756,7 +55756,6 @@
                 "reference": "acc17f3698859e4f0e0d9191fdbd2cef30460acd",
                 "shasum": ""
             },
-            "default-branch": true,
             "type": "custom-installer",
             "autoload": {
                 "psr-4": {

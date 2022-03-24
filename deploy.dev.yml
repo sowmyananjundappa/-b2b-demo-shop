@@ -5,7 +5,7 @@ tag: 'dev'
 
 environment: docker.dev
 image:
-    tag: spryker/php:7.3-alpine3.12
+    tag: spryker/php:7.4-alpine3.14
     php:
         enabled-extensions:
             - blackfire
@@ -215,14 +215,4 @@ docker:
             enabled: true
 
     mount:
-        native:
-            platforms:
-                - linux
-
-        docker-sync:
-            platforms:
-                - windows
-
-        mutagen:
-            platforms:
-                - macos
+        baked:

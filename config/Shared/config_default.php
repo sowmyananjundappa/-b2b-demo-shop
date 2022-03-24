@@ -271,11 +271,24 @@ $config[AclConstants::ACL_USER_RULE_WHITELIST] = [
 $config[PropelConstants::ZED_DB_ENGINE]
     = $config[PropelQueryBuilderConstants::ZED_DB_ENGINE]
     = strtolower(getenv('SPRYKER_DB_ENGINE') ?: '') ?: PropelConfig::DB_ENGINE_MYSQL;
-$config[PropelConstants::ZED_DB_HOST] = getenv('SPRYKER_DB_HOST');
-$config[PropelConstants::ZED_DB_PORT] = getenv('SPRYKER_DB_PORT');
-$config[PropelConstants::ZED_DB_USERNAME] = getenv('SPRYKER_DB_USERNAME');
-$config[PropelConstants::ZED_DB_PASSWORD] = getenv('SPRYKER_DB_PASSWORD');
-$config[PropelConstants::ZED_DB_DATABASE] = getenv('SPRYKER_DB_DATABASE');
+
+    $paasServices = json_decode(getenv('SPRYKER_PAAS_SERVICES') ?: '[]', true);
+
+    if (isset($paasServices['databases']) && isset($paasServices['databases'][APPLICATION_STORE])) {
+        $databasesConfig = $paasServices['databases'][APPLICATION_STORE];
+        $config[PropelConstants::ZED_DB_HOST] = $databasesConfig['host'];
+        $config[PropelConstants::ZED_DB_PORT] = $databasesConfig['port'];
+        $config[PropelConstants::ZED_DB_USERNAME] = $databasesConfig['username'];
+        $config[PropelConstants::ZED_DB_PASSWORD] = $databasesConfig['password'];
+        $config[PropelConstants::ZED_DB_DATABASE] = $databasesConfig['database'];
+    } else {
+        $config[PropelConstants::ZED_DB_HOST] = getenv('SPRYKER_DB_HOST');
+        $config[PropelConstants::ZED_DB_PORT] = getenv('SPRYKER_DB_PORT');
+        $config[PropelConstants::ZED_DB_USERNAME] = getenv('SPRYKER_DB_USERNAME');
+        $config[PropelConstants::ZED_DB_PASSWORD] = getenv('SPRYKER_DB_PASSWORD');
+        $config[PropelConstants::ZED_DB_DATABASE] = getenv('SPRYKER_DB_DATABASE');
+    }
+    
 $config[PropelConstants::ZED_DB_REPLICAS] = json_decode(getenv('SPRYKER_DB_REPLICAS') ?: '[]', true);
 $config[PropelConstants::USE_SUDO_TO_MANAGE_DATABASE] = false;
 
