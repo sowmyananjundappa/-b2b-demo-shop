@@ -215,4 +215,14 @@ docker:
             enabled: true
 
     mount:
-        baked:
+        native:
+            platforms:
+                - linux
+
+        docker-sync:
+            platforms:
+                - windows
+
+        mutagen:
+            platforms:
+                - macos

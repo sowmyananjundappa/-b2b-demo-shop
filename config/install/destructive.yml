@@ -26,7 +26,6 @@ sections:
         clean-db:
             command: "vendor/bin/console propel:tables:drop -vvv --no-ansi"
             stores: true
-
     init-storage:
         setup-search-create-sources:
             command: "vendor/bin/console search:setup:sources -vvv --no-ansi"
