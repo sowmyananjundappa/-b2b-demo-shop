@@ -8,7 +8,6 @@ stores:
     - AT
 
 sections:
-
     scheduler-clean:
         scheduler-clean:
             command: "vendor/bin/console scheduler:clean -vvv --no-ansi || true"
@@ -26,7 +25,11 @@ sections:
         clean-db:
             command: "vendor/bin/console propel:tables:drop -vvv --no-ansi"
             stores: true
+
     init-storage:
+        queue-setup:
+            command: 'vendor/bin/console queue:setup'
+            stores: true
         setup-search-create-sources:
             command: "vendor/bin/console search:setup:sources -vvv --no-ansi"
             stores: true
