@@ -54,7 +54,7 @@ if (!empty(getenv('SPRYKER_ACTIVE_STORES'))) {
         }, $activeStores);
     }
 
-    return $stores;
+    return array_intersect_key($stores, [APPLICATION_STORE => []]);
 }
 
 $stores['DE'] = [
