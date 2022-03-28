@@ -39,8 +39,8 @@ regions:
                     name: Spryker No-Reply
                     email: no-reply@spryker.local
             databases:
-                multi-db-first: -> DB name to create
-                multi-db-second: -> DB name to create
+                multi-db-first:
+                multi-db-second:
 
         stores:
             DE:
