@@ -61,7 +61,7 @@ sections:
 
     demodata:
         import-eu-region-demodata:
-            command: 'vendor/bin/console data:import --config=data/import/production/full_${APPLICATION_STORE}.yml'
+            command: 'vendor/bin/console data:import --config=data/import/local/full_${APPLICATION_STORE}.yml'
             stores: true
 
         update-product-labels:
