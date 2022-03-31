@@ -5564,7 +5564,7 @@
                 "php": ">=7.3",
                 "spryker/elastica": "^6.0.0",
                 "spryker/search": "^8.19.0",
-                "spryker/search-elasticsearch": "^1.12.0",
+                "spryker/search-elasticsearch": "^1.14.0",
                 "spryker/search-elasticsearch-gui": "^1.0.0"
             },
             "type": "metapackage",
